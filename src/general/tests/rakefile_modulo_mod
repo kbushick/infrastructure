@@ -1,0 +1,70 @@
+#
+# Filename: rakefile_modulo_mod.f90
+#
+# Build, test, and clean the FRUIT unittest harness for automatic unittesting
+#
+
+require 'rubygems'
+require 'fruit_processor'
+require 'rake/clean'
+include Rake::DSL if defined?(Rake::DSL)
+
+ROOT = ENV['INFRASTRUCTURE_DIR']
+BUILD_DIR = File.join(ROOT, 'general', 'tests') 
+GOAL = File.join(BUILD_DIR, '..', 'test_modulo_mod.x')
+FILENAMES = [File.join(BUILD_DIR, 'fruit.f90'),
+	         File.join(BUILD_DIR, '..', 'modulo_mod.f90'),
+	         File.join(BUILD_DIR, 'test_modulo_mod.f90'),
+	         File.join(BUILD_DIR, 'fruit_modulo_mod.f90')]
+ 
+########################################
+# DO NOT EDIT ANYTHING BELOW THIS LINE
+########################################
+
+FRUIT_FROM = File.join(ROOT, 'general', 'fruit.f90')
+FRUIT_TO = File.join(BUILD_DIR, 'fruit.f90')
+ 
+load File.join(ROOT, 'general', 'rake_base.rb')
+
+OBJ_FILENAMES = FILENAMES.map{|fname| File.join(BUILD_DIR, File.basename(fname.sub('.f90', '.o')))}
+
+task :default => [:all]
+
+task :all do
+    FileUtils.cp(FRUIT_FROM, FRUIT_TO)
+	
+    if $compiler == 'gfortran'
+        # Debug build for checking code coverage with gcov
+		F90FLAGS = "-g -O0 --coverage -J#{BUILD_DIR}"
+		LDFLAGS = ''
+		LIBS = '--coverage'
+	elsif $compiler == 'ifort'
+		F90FLAGS = "-g -O0 -module #{BUILD_DIR}"
+		LDFLAGS = ''
+		LIBS = ''
+	else
+		puts "Unknown compiler"
+		return
+	end
+
+	for fname in FILENAMES
+		obj = File.join(BUILD_DIR, File.basename(fname.sub('.f90', '.o'))) 
+		sh "#{$compiler} #{$option} #{F90FLAGS} -I #{BUILD_DIR} -c #{fname} -o #{obj}"
+	end
+
+	objects = OBJ_FILENAMES.join(' ') 
+	sh "#{$linker} #{$linker_option} #{LDFLAGS} #{LIBS} #{$option_exe} #{GOAL} #{objects}"
+end
+
+task :test do
+	sh "#{GOAL}"
+end
+
+CLEAN.include(FileList["fruit.f90", 
+                       "fruit_util.f90",
+                       File.join(BUILD_DIR, "*.mod"), 
+                       File.join(BUILD_DIR, "*.o"),
+                       File.join(BUILD_DIR, "*.gcno"),
+                       File.join(BUILD_DIR, "*.gcda"),
+                       GOAL])
+ 

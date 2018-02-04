@@ -1,0 +1,7 @@
+*.x
+*.x.dSYM
+tests/*.o
+tests/*.mod
+tests/fruit.f90
+tests/*.gcno
+tests/*.gcda
