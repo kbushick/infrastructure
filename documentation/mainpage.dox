@@ -1,0 +1,10 @@
+!
+!@brief Documentation for my project
+!@author Jared O'Neal
+!@file Mainpage.dox
+!*/
+!/**
+!@mainpage Demonstration API
+!This is a simple demonstration of getting Doxygen output to GitHub
+!
+

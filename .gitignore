@@ -1,1 +1,4 @@
-html
+html/
+lcov/
+Personal_lcov.info
+src/*/obj
