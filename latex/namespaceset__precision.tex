@@ -1,0 +1,55 @@
+\hypertarget{namespaceset__precision}{}\section{set\+\_\+precision Module Reference}
+\label{namespaceset__precision}\index{set\+\_\+precision@{set\+\_\+precision}}
+
+
+This file determines the decimal precision for f90 programs. Switch which lines are commented out to change the precision. Byte is also included so that you can use single byte integers.~\newline
+.  
+
+
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceset__precision_a8fd1e6ca7816e7db801cd467b1dee8b4}{}\label{namespaceset__precision_a8fd1e6ca7816e7db801cd467b1dee8b4} 
+integer, parameter {\bfseries byte} = selected\+\_\+int\+\_\+kind(1)
+\item 
+\hypertarget{namespaceset__precision_a1a419a5b32b59def253716b18c4943d6}{}\label{namespaceset__precision_a1a419a5b32b59def253716b18c4943d6} 
+integer, parameter {\bfseries int64} = selected\+\_\+int\+\_\+kind(18)
+\item 
+\hypertarget{namespaceset__precision_a27cc43adc78b1fe580d0d376bb5f8c6c}{}\label{namespaceset__precision_a27cc43adc78b1fe580d0d376bb5f8c6c} 
+integer, parameter {\bfseries int32} = selected\+\_\+int\+\_\+kind(9)
+\item 
+\hypertarget{namespaceset__precision_ad34de41786b019a0fd8e6d48548992cb}{}\label{namespaceset__precision_ad34de41786b019a0fd8e6d48548992cb} 
+integer, parameter {\bfseries int16} = selected\+\_\+int\+\_\+kind(4)
+\item 
+\hypertarget{namespaceset__precision_acb9c04da28e9f11e48fce2ca4f8c0bb0}{}\label{namespaceset__precision_acb9c04da28e9f11e48fce2ca4f8c0bb0} 
+integer, parameter {\bfseries int8} = selected\+\_\+int\+\_\+kind(2)
+\item 
+\hypertarget{namespaceset__precision_a37da73d727730fbd7cab8d7e2a65a067}{}\label{namespaceset__precision_a37da73d727730fbd7cab8d7e2a65a067} 
+integer, parameter {\bfseries ieee32} = selected\+\_\+real\+\_\+kind(p=6, r=37)
+\item 
+\hypertarget{namespaceset__precision_a3e2b8f3129c24855d9bb080d6a22fa69}{}\label{namespaceset__precision_a3e2b8f3129c24855d9bb080d6a22fa69} 
+integer, parameter {\bfseries ieee64} = selected\+\_\+real\+\_\+kind(p=15, r=307)
+\item 
+\hypertarget{namespaceset__precision_a13d80e8b80b6921e0a3c802a36f65864}{}\label{namespaceset__precision_a13d80e8b80b6921e0a3c802a36f65864} 
+integer, parameter {\bfseries sp} = selected\+\_\+real\+\_\+kind(p=6, r=37)
+\item 
+\hypertarget{namespaceset__precision_a4f75e99c30368767fc579f7266cbe72c}{}\label{namespaceset__precision_a4f75e99c30368767fc579f7266cbe72c} 
+integer, parameter {\bfseries dp} = selected\+\_\+real\+\_\+kind(p=15, r=307)
+\item 
+\hypertarget{namespaceset__precision_a44b548370c6da8498ea17dc80c7b3d28}{}\label{namespaceset__precision_a44b548370c6da8498ea17dc80c7b3d28} 
+integer, parameter {\bfseries qp} = selected\+\_\+real\+\_\+kind(p=18, r=4931)
+\item 
+\hypertarget{namespaceset__precision_a4166cb4cc83c726719939d0fe242ed6f}{}\label{namespaceset__precision_a4166cb4cc83c726719939d0fe242ed6f} 
+integer, parameter {\bfseries wp} = dp
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file determines the decimal precision for f90 programs. Switch which lines are commented out to change the precision. Byte is also included so that you can use single byte integers.~\newline
+. 
+
+\begin{DoxyAuthor}{Author}
+Prof. Edward Overman 
+
+Jared O\textquotesingle{}Neal 
+\end{DoxyAuthor}

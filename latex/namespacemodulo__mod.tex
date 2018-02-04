@@ -1,0 +1,48 @@
+\hypertarget{namespacemodulo__mod}{}\section{modulo\+\_\+mod Module Reference}
+\label{namespacemodulo__mod}\index{modulo\+\_\+mod@{modulo\+\_\+mod}}
+
+
+Code for modulo arithmetic.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+integer function, public \hyperlink{namespacemodulo__mod_a5fff359dad4bd0fd8b520730dffe056e}{mod1} (n, k)
+\begin{DoxyCompactList}\small\item\em Perform k-\/modulo integer arithmetic such that wrapping is one-\/based.~\newline
+ Ex. For k = 4, the sequence 0, 1, 2, 3, 4, 5 maps to 4, 1, 2, 3, 4, 1 instead of the zero-\/based scheme, which maps to 0, 1, 2, 3, 0, 1. This subroutine is therefore useful for modulo arithemetic applied to loop integers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Code for modulo arithmetic. 
+
+\begin{DoxyAuthor}{Author}
+Jared O\textquotesingle{}Neal 
+\end{DoxyAuthor}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\hypertarget{namespacemodulo__mod_a5fff359dad4bd0fd8b520730dffe056e}{}\label{namespacemodulo__mod_a5fff359dad4bd0fd8b520730dffe056e} 
+\index{modulo\+\_\+mod@{modulo\+\_\+mod}!mod1@{mod1}}
+\index{mod1@{mod1}!modulo\+\_\+mod@{modulo\+\_\+mod}}
+\subsubsection{\texorpdfstring{mod1()}{mod1()}}
+{\footnotesize\ttfamily integer function, public modulo\+\_\+mod\+::mod1 (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{n,  }\item[{integer, intent(in)}]{k }\end{DoxyParamCaption})}
+
+
+
+Perform k-\/modulo integer arithmetic such that wrapping is one-\/based.~\newline
+ Ex. For k = 4, the sequence 0, 1, 2, 3, 4, 5 maps to 4, 1, 2, 3, 4, 1 instead of the zero-\/based scheme, which maps to 0, 1, 2, 3, 0, 1. This subroutine is therefore useful for modulo arithemetic applied to loop integers. 
+
+\begin{DoxyAuthor}{Author}
+Jared O\textquotesingle{}Neal 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & -\/ number to which apply the modulo operation \\
+\hline
+\mbox{\tt in}  & {\em k} & -\/ base of modulo operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modulo result 
+\end{DoxyReturn}

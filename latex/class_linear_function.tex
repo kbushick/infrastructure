@@ -1,0 +1,137 @@
+\hypertarget{class_linear_function}{}\section{Linear\+Function Class Reference}
+\label{class_linear_function}\index{Linear\+Function@{Linear\+Function}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_linear_function_ad68f82a23780368e83ceb96ec653aac1}{Linear\+Function} (const double a0, const double a1)
+\begin{DoxyCompactList}\small\item\em Instantiate a lineaer function by setting its coefficients only. \end{DoxyCompactList}\item 
+\hypertarget{class_linear_function_a0baae434a061ea70eaea3b58ef969653}{}\label{class_linear_function_a0baae434a061ea70eaea3b58ef969653} 
+double {\bfseries a0} (void) const
+\item 
+\hypertarget{class_linear_function_a7984cea380d51b44dbf521b3ef02bc63}{}\label{class_linear_function_a7984cea380d51b44dbf521b3ef02bc63} 
+double {\bfseries a1} (void) const
+\item 
+\hypertarget{class_linear_function_a597e28db6653885caf0b82b7fb19591c}{}\label{class_linear_function_a597e28db6653885caf0b82b7fb19591c} 
+double {\bfseries a0\+Error} (void) const
+\item 
+\hypertarget{class_linear_function_a50ba10d28fb31099fc55a89ba28653e1}{}\label{class_linear_function_a50ba10d28fb31099fc55a89ba28653e1} 
+double {\bfseries a1\+Error} (void) const
+\item 
+\hypertarget{class_linear_function_a7504fb0d6af0b66950c5b31a64a83145}{}\label{class_linear_function_a7504fb0d6af0b66950c5b31a64a83145} 
+double {\bfseries chi\+Squared} (void) const
+\item 
+\hypertarget{class_linear_function_aeaa836943949b1a923a28ffe75f7f2f3}{}\label{class_linear_function_aeaa836943949b1a923a28ffe75f7f2f3} 
+double {\bfseries r\+Squared} (void) const
+\item 
+double \hyperlink{class_linear_function_a8913bf6feb840991af9b324c6d46e2eb}{evaluate} (const double x) const
+\item 
+std\+::vector$<$ double $>$ \hyperlink{class_linear_function_a8c0653b32046a1c0b6b41b1d01128bec}{evaluate} (const std\+::vector$<$ double $>$ \&x) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_linear_function}{Linear\+Function} \hyperlink{class_linear_function_a02be84eb14f948b2d938f0a9deb9ff37}{from\+\_\+least\+\_\+squares} (const std\+::vector$<$ double $>$ \&x, const std\+::vector$<$ double $>$ \&y, const double sigma)
+\item 
+static \hyperlink{class_linear_function}{Linear\+Function} \hyperlink{class_linear_function_acb7709ac2cad1206b70dab2a67e9f15e}{from\+\_\+least\+\_\+squares} (const std\+::vector$<$ double $>$ \&x, const std\+::vector$<$ double $>$ \&y, const std\+::vector$<$ double $>$ \&sigma)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_linear_function_ad68f82a23780368e83ceb96ec653aac1}{}\label{class_linear_function_ad68f82a23780368e83ceb96ec653aac1} 
+\index{Linear\+Function@{Linear\+Function}!Linear\+Function@{Linear\+Function}}
+\index{Linear\+Function@{Linear\+Function}!Linear\+Function@{Linear\+Function}}
+\subsubsection{\texorpdfstring{Linear\+Function()}{LinearFunction()}}
+{\footnotesize\ttfamily Linear\+Function\+::\+Linear\+Function (\begin{DoxyParamCaption}\item[{const double}]{a0,  }\item[{const double}]{a1 }\end{DoxyParamCaption})}
+
+
+
+Instantiate a lineaer function by setting its coefficients only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a0} & -\/ coefficient \\
+\hline
+{\em a1} & -\/ coefficient \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_linear_function_a8913bf6feb840991af9b324c6d46e2eb}{}\label{class_linear_function_a8913bf6feb840991af9b324c6d46e2eb} 
+\index{Linear\+Function@{Linear\+Function}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!Linear\+Function@{Linear\+Function}}
+\subsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Linear\+Function\+::evaluate (\begin{DoxyParamCaption}\item[{const double}]{x }\end{DoxyParamCaption}) const}
+
+Evaluate the linear function at the given single point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ the point at which to evaluate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the function value f(x) 
+\end{DoxyReturn}
+\hypertarget{class_linear_function_a8c0653b32046a1c0b6b41b1d01128bec}{}\label{class_linear_function_a8c0653b32046a1c0b6b41b1d01128bec} 
+\index{Linear\+Function@{Linear\+Function}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!Linear\+Function@{Linear\+Function}}
+\subsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Linear\+Function\+::evaluate (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption}) const}
+
+Evaluate the linear function at each of the given points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ the point at which to evaluate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the set of function evaluations 
+\end{DoxyReturn}
+\hypertarget{class_linear_function_a02be84eb14f948b2d938f0a9deb9ff37}{}\label{class_linear_function_a02be84eb14f948b2d938f0a9deb9ff37} 
+\index{Linear\+Function@{Linear\+Function}!from\+\_\+least\+\_\+squares@{from\+\_\+least\+\_\+squares}}
+\index{from\+\_\+least\+\_\+squares@{from\+\_\+least\+\_\+squares}!Linear\+Function@{Linear\+Function}}
+\subsubsection{\texorpdfstring{from\+\_\+least\+\_\+squares()}{from\_least\_squares()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_linear_function}{Linear\+Function} Linear\+Function\+::from\+\_\+least\+\_\+squares (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x,  }\item[{const std\+::vector$<$ double $>$ \&}]{y,  }\item[{const double}]{sigma }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Given a set of two or more data points, construct a \hyperlink{class_linear_function}{Linear\+Function} object that describes the linear least squared fit to the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ the independent variable portion of the data points \\
+\hline
+{\em y} & -\/ the dependent variable portion of the data points \\
+\hline
+{\em sigma} & -\/ the single error value associated to all data points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the object 
+\end{DoxyReturn}
+\hypertarget{class_linear_function_acb7709ac2cad1206b70dab2a67e9f15e}{}\label{class_linear_function_acb7709ac2cad1206b70dab2a67e9f15e} 
+\index{Linear\+Function@{Linear\+Function}!from\+\_\+least\+\_\+squares@{from\+\_\+least\+\_\+squares}}
+\index{from\+\_\+least\+\_\+squares@{from\+\_\+least\+\_\+squares}!Linear\+Function@{Linear\+Function}}
+\subsubsection{\texorpdfstring{from\+\_\+least\+\_\+squares()}{from\_least\_squares()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_linear_function}{Linear\+Function} Linear\+Function\+::from\+\_\+least\+\_\+squares (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x,  }\item[{const std\+::vector$<$ double $>$ \&}]{y,  }\item[{const std\+::vector$<$ double $>$ \&}]{sigma }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Given a set of two or more data points, construct a \hyperlink{class_linear_function}{Linear\+Function} object that describes the linear least squared fit to the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ the independent variable portion of the data points \\
+\hline
+{\em y} & -\/ the dependent variable portion of the data points \\
+\hline
+{\em sigma} & -\/ the single error value associated to all data points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/functions/\hyperlink{_linear_function_8h}{Linear\+Function.\+h}\item 
+src/functions/\hyperlink{_linear_function_8cpp}{Linear\+Function.\+cpp}\end{DoxyCompactItemize}
