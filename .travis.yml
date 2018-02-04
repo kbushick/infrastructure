@@ -1,0 +1,45 @@
+# Define customizable work environment that runs tests with ruby/rake
+sudo: required
+language: ruby
+env:
+  global:
+  # Environment variable Needed by Makefiles
+  - INFRASTRUCTURE_DIR=./src
+
+# Extend default work environment
+addons:
+  apt:
+    sources: 
+    - ubuntu-toolchain-r-test
+    packages:
+    - gfortran-6
+    - doxygen
+    - lcov
+cache:
+  apt: true
+
+before_install:
+- pip install --user cpp-coveralls
+- sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-6 50
+
+# Setup Ruby to use the FRUiT Fortran testing framework
+install:
+- wget https://sourceforge.net/projects/fortranxunit/files/latest/download
+- unzip download
+- ls -la
+- pushd fruit_*/fruit_processor_gem/pkg
+- gem install fruit_processor-*.gem
+- popd
+
+# Build tests and run
+# Would need to inlude LaTeX in environment to be able to use Travis CI to test
+# proper build of documentation with 'make docs'
+script:
+- make clean all
+- make test
+
+# Study code coverage of codebase by tests (exclude source code in test files)
+after_success:
+- make lcov
+- coveralls
+
