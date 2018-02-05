@@ -311,7 +311,7 @@ contains
             ERRORMSG("Cannot do linear least-sqrs.  Divide by zero.")
             stop
         end if
-        delta_inv = 2.0_wp / delta
+        delta_inv = 1.0_wp / delta
 
         ! Model parameters
         linear_fcn%a1 = (S  *Sxy - Sx*Sy ) * delta_inv;
