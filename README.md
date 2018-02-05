@@ -1,3 +1,9 @@
+Status of Personal codebase
+-----
+[![Tests](https://travis-ci.org/jrdoneal/infrastructure.svg?branch=master "master")](https://travis-ci.org/jrdoneal/infrastructure)
+
+Description
+-----
 This is a toy repository that
 
     * contains a mixture of Fortran and C++ code,
