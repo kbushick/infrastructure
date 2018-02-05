@@ -185,7 +185,7 @@ LinearFunction LinearFunction::from_least_squares(const std::vector<double>& x,
 	if (delta == 0.0) {
 		throw std::runtime_error("Divide by zero");
 	}
-	double deltaInv = 1.0 / delta;
+	double deltaInv = 2.0 / delta;
 
     fit._a1 = (S  *Sxy  - Sx*Sy ) * deltaInv;
     fit._a0 = (Sxx*Sy   - Sx*Sxy) * deltaInv;
