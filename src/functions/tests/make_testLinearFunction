@@ -1,0 +1,41 @@
+#!/bin/sh
+
+BASE = testLinearFunction
+
+SRC_DIR=$(INFRASTRUCTURE_DIR)/functions
+OBJ_DIR=$(SRC_DIR)/obj
+
+CXX      = g++
+CXXFLAGS = -g -O0 -I$(SRC_DIR) -J$(OBJ_DIR) --coverage
+LIBS     = --coverage
+LDFLAGS  = 
+
+MAKEFILE = $(SRC_DIR)/tests/make_$(BASE)
+COMMAND =  $(SRC_DIR)/$(BASE).x
+
+all:    $(COMMAND) 
+
+.SUFFIXES:
+.SUFFIXES: .o .cpp
+
+$(OBJ_DIR):
+	mkdir -p $@
+
+$(OBJ_DIR)/LinearFunction.o : $(SRC_DIR)/LinearFunction.cpp $(MAKEFILE) | $(OBJ_DIR)
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+$(OBJ_DIR)/testLinearFunction.o : $(SRC_DIR)/tests/testLinearFunction.cpp $(OBJ_DIR)/LinearFunction.o
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+$(COMMAND): $(OBJ_DIR)/LinearFunction.o $(OBJ_DIR)/testLinearFunction.o
+	$(CXX) -o $(COMMAND) $^ $(LDFLAGS) $(LIBS)
+
+# Run test and generate code coverage intermediate files in OBJ_DIR
+test:
+	../testLinearFunction.x
+
+# Delete the program and the object files (and any module files)
+clean:
+	/bin/rm -f $(COMMAND)
+	/bin/rm -rf $(OBJ_DIR)
+

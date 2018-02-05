@@ -5,7 +5,8 @@ import subprocess as sbp
 
 PATH = os.getenv('INFRASTRUCTURE_DIR')
 
-TESTS_ALL = [os.path.join(PATH, 'functions', 'test_linear_fcn_class.x')]
+TESTS_ALL = [os.path.join(PATH, 'functions', 'test_linear_fcn_class.x'), \
+             os.path.join(PATH, 'functions', 'testLinearFunction.x')]
 
 n_failed = 0
 for test in TESTS_ALL:

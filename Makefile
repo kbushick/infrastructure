@@ -5,6 +5,7 @@ MAKEDIR = $(INFRASTRUCTURE_DIR)/..
 # Build all tests
 all:
 	rake -f $(MAKEDIR)/src/functions/tests/rakefile_linear_fcn_class all 
+	make -f $(MAKEDIR)/src/functions/tests/make_testLinearFunction all
 	rake -f $(MAKEDIR)/src/general/tests/rakefile_modulo_mod all
 
 test:
@@ -29,5 +30,6 @@ clean:
 	/bin/rm -f  $(MAKEDIR)/Personal_lcov.info
 
 	rake -f $(MAKEDIR)/src/functions/tests/rakefile_linear_fcn_class clean 
+	make -f $(MAKEDIR)/src/functions/tests/make_testLinearFunction clean 
 	rake -f $(MAKEDIR)/src/general/tests/rakefile_modulo_mod clean 
 
