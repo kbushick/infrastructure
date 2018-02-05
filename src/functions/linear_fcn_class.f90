@@ -339,7 +339,7 @@ contains
         if (n_pts <= 2) then
             linear_fcn%chi2 = 1.0_wp
         else
-            linear_fcn%chi2 = error / (n_pts - 2)
+            lnear_fcn%chi2 = error / (n_pts - 2)
         end if
 
     end subroutine from_least_sqrs_nonuniform
