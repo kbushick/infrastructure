@@ -311,7 +311,7 @@ contains
             ERRORMSG("Cannot do linear least-sqrs.  Divide by zero.")
             stop
         end if
-        delta_inv = 1.0_wp / delta
+        delta_inv = 2.0_wp / delta
 
         ! Model parameters
         linear_fcn%a1 = (S  *Sxy - Sx*Sy ) * delta_inv;
@@ -339,7 +339,7 @@ contains
         if (n_pts <= 2) then
             linear_fcn%chi2 = 1.0_wp
         else
-            lnear_fcn%chi2 = error / (n_pts - 2)
+            linear_fcn%chi2 = error / (n_pts - 2)
         end if
 
     end subroutine from_least_sqrs_nonuniform
