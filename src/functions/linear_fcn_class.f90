@@ -166,7 +166,9 @@ contains
             ERRORMSG("sigma must be non-negative")
             stop
         end if
-
+     
+        !a random comment     
+     
         S   = n_pts
         Sx  = 0.0_wp
         Sy  = 0.0_wp
